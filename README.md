@@ -1,104 +1,80 @@
-# **Website 2 APK Builder 5.3 Pro**
-
-> Convert your Website or HTML5 app to a native Android App.
-> 
-> Supports html5, html, php, htm, js, css.
-> 
-> Build app from any live website or from local html folder.
-
-**What's new in v5.3**
-- Push Notification Permission
-- Added Android 13 Special Permission
-- Bug Fixes**
-
- **Highlights:**
-- Android App Bundle (.aab) Support
-- Android TV Support
-- Support for 100 MB+ APKs
-- Firebase In-App Messaging
-- Blob Download Support
-- Multiple Image Upload Support
-- JS API to get device API Level
-- Unicode character support for Nav Drawer
-- Deep-linking
-- Material Design
-- Change Material Color Scheme
-- Pull-to-Refresh
-- Navigation Drawer Designer
-- Live Toolbar Title
-- Material Toolbar
-- Wix Support (Fixed Layout Issue)
-- Better handling for SSL related errors
-- Updated Firebase and AdMob library versions
-- JS API to prevent device from sleeping
-- Fix Audio Play Bug
-- Overview mode enabled along with Desktop mode.
-- Push notifications automatically expandable when description is longer
-- Cookies now work with offline files too
-- JS API to show/hide AdMob banner on selected pages
-- .Webapp project now saves permissions, push config and progress wheel also.
-- Option to remove JavaScript APIs (In response to JavaScript Interface Injection Vulnerability)
-- Desktop Mode
-- HTTPs Only Mode (In response to JavaScript Interface Injection Vulnerability & Better Security)
-- Debug Mode can now display SSL related errors on your screen)
-- Keep Screen On while playing full screen videos
-- Hide WebView User Agent (Allows login with Google and Many more).
-- Added option to select if you want to overlap new notification to existing or show as new.
-- Added "isBroadcastEnabled" JS API Function
-- Audio recording now working.  
-- GDPR Compliant AdMob Functions
-- Allow or Prevent Screenshot
-- Push Notifications API Access
-- Adjust Screen Layout while Typing
-- Custom Keystore
-- Download via Download Manager
-- Push Notifications
-- Persistent Cookies
-- App Orientation
-- New JavaScript APIs 
-- jQuery, Ionic & jQueryMobile support for Offline HTML Apps.
-- App Share Button (Also avaibale with Javascript)
-- FullScreen Mode
-- Display Toast & Dialog via JavaScript
-- Gesture Zoom Support
-- JavaScript APIs to perform In-App Activities
-- HTML5 Vibration API Support
-- Skype, Whatsapp, SMS, Intent links Support
-- Externl Links Open Outside (Optional Supprted)
-- Confirm on Exit (Optional to Enable)
-- Build Android Apps easily from your HTML5 or Web Content
-- Create Apps in seconds for your Live Website
-- AdMob Banner & Interstitial Ads
-- Custom Splash screen
-- Custom Package Name
-- Custom Android Permissions
-- Custom Error Pages
-- Google Play Ready Android App
-- Login Session Keeping
-- Configurable Caching Options
-- Offine HTML5 Video Support
-- File Upload Support
-- Camera Upload Support
-- Save Project as .webapp file
-- Camcorder Video Recording Upload
-- Location issue fixed
-- Set App Orientation
-- Zoom Buttons Option
-- About Dialog
-- Custom Progress Wheel
-- Set Splash Duration
-- Completely Ad-Free
-- No Back-Links
-- User Friendly
-- Best App Results for Responsive Sites
-
-## **[Download Now!](https://websitetoapk.com/download.html)**
-
-![screenshot1](http://websitetoapk.com/images/screenshots/v5.3_1.png)
-
-**For Updates & More Releases:**
-
-Follow Us [@GoyalSoftech](https://github.com/goyalsoftech/)
-(http://www.goyalsoftech.com/)
-
-## **[Download Now!](https://websitetoapk.com/download.html)**
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Courier Prime', monospace;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-blue-500 p-8 rounded-lg shadow-md w-full max-w-md border-4 border-black">
+        <h1 class="text-center text-2xl font-bold mb-4 text-black">INTEREST CALCULATOR</h1>
+        <h2 class="text-center text-2xl mb-6 text-red-700 font-extrabold">🏆🌹-: BINOD BAT :-🌹🏆</h2>
+        <form id="interest-form">
+            <div class="mb-4">
+                <label for="amount" class="block text-black">Amount(₹)</label>
+                <input type="number" id="amount" class="w-full p-2 border border-gray-300 rounded mt-1">
+            </div>
+            <div class="mb-4">
+                <label for="rate" class="block text-black">Rate(%)</label>
+                <input type="number" id="rate" class="w-full p-2 border border-gray-300 rounded mt-1">
+            </div>
+            <div class="mb-4">
+                <label for="start-date" class="block text-black">Start Date</label>
+                <input type="date" id="start-date" class="w-full p-2 border border-gray-300 rounded mt-1">
+            </div>
+            <div class="mb-4">
+                <label for="current-date" class="block text-black">Current Date</label>
+                <input type="date" id="current-date" class="w-full p-2 border border-gray-300 rounded mt-1">
+            </div>
+            <p id="duration" class="text-center mb-4 text-black">00 years, 00 months, 00 days</p>
+            <button type="button" class="w-full bg-blue-700 text-white p-2 rounded" onclick="calculateInterest()">Calculate</button>
+        </form>
+        <div id="output" class="mt-6 text-black">
+            <p id="monthly-interest">00 months: ₹ 00.00</p>
+            <p>00 days: ₹ 00.00</p>
+            <p>00 years: ₹ 00.00</p>
+            <p>Total sudh: ₹ 00.00</p>
+            <p class="font-bold">Total Rupiya: ₹ 00.00</p>
+        </div>
+    </div>
+    <script>
+        function calculateInterest() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const startDate = new Date(document.getElementById('start-date').value);
+            const currentDate = new Date(document.getElementById('current-date').value);
+            if (isNaN(amount) || isNaN(rate) || !startDate || !currentDate) {
+                alert('Please fill in all fields correctly.');
+                return;
+            }
+            const timeDiff = Math.abs(currentDate - startDate);
+            const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)) - 1; // Subtract 1 day to correct the calculation
+            const years = Math.floor(daysDiff / 365);
+            const months = Math.floor((daysDiff % 365) / 30);
+            const days = (daysDiff % 365) % 30;
+            const monthlyInterest = (amount * rate * months) / 100;
+            const dailyInterest = (amount * rate / 100) / 30 * days;
+            const yearlyInterest = (amount * rate / 100) * 12 * years;
+            const totalInterest = monthlyInterest + dailyInterest + yearlyInterest;
+            const totalAmount = amount + totalInterest;
+            document.getElementById('duration').innerText = `${years} years, ${months} months, ${days} days`;
+            document.getElementById('output').innerHTML = `
+                <p id="monthly-interest">${months} months: ₹ ${monthlyInterest.toFixed(2)}</p>
+                <p>${days} days: ₹ ${dailyInterest.toFixed(2)}</p>
+                <p>${years} years: ₹ ${yearlyInterest.toFixed(2)}</p>
+                <p>Total sudh: ₹ ${totalInterest.toFixed(2)}</p>
+                <p class="font-bold">Total Rupiya: ₹ ${totalAmount.toFixed(2)}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
